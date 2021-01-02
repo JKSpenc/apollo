@@ -1,4 +1,4 @@
-# quizify
+# apollo
 
 ## Project setup
 ```

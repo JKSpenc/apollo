@@ -1,32 +1,42 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+    <router-view></router-view>
   </div>
 </template>
 
-<style>
+<script>
+export default {
+  name: 'App'
+}
+</script>
+
+<style lang="scss">
+@import "~vue-material/dist/theme/engine"; // Import the theme engine
+
+@include md-register-theme(
+  "default",
+  (
+    primary:rgb(17, 133, 17), // md-get-palette-color(, A200),
+     // The primary color of your application
+    accent: md-get-palette-color(red, A200),
+     // The accent or secondary color
+    theme: dark  // This can be dark or light,
+  )
+);
+
+@import "~vue-material/dist/theme/all"; // Apply the theme
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Poppins', Roboto, 'Segoe UI', Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
 }
 
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
+body {
+  background: map-get(
+    map-get($md-color-levels, md-get-theme-mode()),
+    "background"
+  ) !important;
 }
 </style>
