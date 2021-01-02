@@ -1,5 +1,7 @@
 # apollo
 
+Spotify Quiz app
+
 ## Project setup
 ```
 npm install
