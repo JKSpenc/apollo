@@ -2,6 +2,8 @@
 
 Spotify Quiz app
 
+The backend for this project is a separate git repo
+
 ## Project setup
 ```
 npm install
